@@ -1,0 +1,1185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amsterdam + Netherlands Family Trip Dossier</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #5f6f7c;
+      --paper: #fbfaf6;
+      --panel: #ffffff;
+      --line: #d9dfdf;
+      --blue: #146c8e;
+      --green: #2f7d5c;
+      --yellow: #d19a21;
+      --red: #b34b3f;
+      --aqua: #d9eef1;
+      --leaf: #e5f0df;
+      --sun: #fae8b8;
+      --rose: #f4ded9;
+      --shadow: 0 18px 45px rgba(20, 38, 46, .13);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+    }
+
+    a { color: var(--blue); }
+
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      align-items: end;
+      background:
+        linear-gradient(180deg, rgba(12, 24, 30, .18), rgba(12, 24, 30, .78)),
+        url("https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&fit=crop&w=1800&q=80") center / cover;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 10vh;
+      background: linear-gradient(180deg, rgba(251,250,246,0), var(--paper));
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 76px 0 18vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .86rem;
+      font-weight: 750;
+      text-transform: uppercase;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.28);
+      padding: 8px 12px;
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      width: min(900px, 100%);
+      margin: 22px 0 18px;
+      font-size: clamp(2.55rem, 7vw, 5.9rem);
+      line-height: .92;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      width: min(760px, 100%);
+      font-size: clamp(1.05rem, 2.3vw, 1.34rem);
+      line-height: 1.55;
+      margin: 0;
+      color: rgba(255,255,255,.92);
+    }
+
+    .hero-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 30px;
+      width: min(900px, 100%);
+    }
+
+    .hero-stat {
+      border: 1px solid rgba(255,255,255,.26);
+      background: rgba(255,255,255,.14);
+      padding: 14px 15px;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 1.25rem;
+      margin-bottom: 2px;
+    }
+
+    .hero-stat span {
+      color: rgba(255,255,255,.82);
+      font-size: .88rem;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 54px 0;
+    }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 380px);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 3.8vw, 3rem);
+      margin: 0;
+      letter-spacing: 0;
+      line-height: 1.03;
+    }
+
+    .lede {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 1rem;
+    }
+
+    .notice {
+      border-left: 5px solid var(--yellow);
+      background: var(--sun);
+      padding: 16px 18px;
+      margin: 22px 0 0;
+      border-radius: 0 8px 8px 0;
+      line-height: 1.5;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .quick-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: 0 8px 24px rgba(20, 38, 46, .06);
+    }
+
+    .quick-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.06rem;
+    }
+
+    .quick-card p, .quick-card li {
+      color: var(--muted);
+      line-height: 1.48;
+      font-size: .94rem;
+    }
+
+    .quick-card p { margin: 0; }
+    .quick-card ul { padding-left: 18px; margin: 0; }
+
+    .filters {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      background: rgba(251,250,246,.93);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 10px 0;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      padding: 2px 0;
+    }
+
+    .filter-button {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-weight: 760;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .filter-button.active {
+      background: var(--ink);
+      color: white;
+      border-color: var(--ink);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-rows: 164px auto;
+      min-height: 630px;
+    }
+
+    .card.hidden { display: none; }
+
+    .photo {
+      background: var(--aqua);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.02);
+    }
+
+    .photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.24));
+    }
+
+    .rank {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      z-index: 1;
+      background: rgba(255,255,255,.92);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-weight: 840;
+      font-size: .82rem;
+    }
+
+    .card-body {
+      padding: 17px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.32rem;
+      line-height: 1.12;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      background: var(--leaf);
+      color: #274b3c;
+      border: 1px solid rgba(47, 125, 92, .22);
+      border-radius: 999px;
+      padding: 5px 8px;
+      font-size: .78rem;
+      font-weight: 780;
+    }
+
+    .pill.blue { background: var(--aqua); color: #164b61; border-color: rgba(20,108,142,.22); }
+    .pill.yellow { background: var(--sun); color: #684900; border-color: rgba(209,154,33,.25); }
+    .pill.rose { background: var(--rose); color: #74332d; border-color: rgba(179,75,63,.24); }
+
+    .summary {
+      color: var(--ink);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .dossier {
+      display: grid;
+      gap: 8px;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: .93rem;
+    }
+
+    .dossier b {
+      color: var(--ink);
+    }
+
+    .source-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      padding-top: 2px;
+      font-size: .9rem;
+      font-weight: 730;
+    }
+
+    .itinerary {
+      display: grid;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .day {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 18px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .day-num {
+      font-weight: 860;
+      color: var(--red);
+      text-transform: uppercase;
+      font-size: .82rem;
+    }
+
+    .day h3 {
+      margin: 0 0 8px;
+      font-size: 1.18rem;
+    }
+
+    .day p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .compare {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      display: table;
+      margin-top: 24px;
+    }
+
+    .compare th,
+    .compare td {
+      text-align: left;
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      line-height: 1.42;
+    }
+
+    .compare th {
+      background: #edf4f0;
+      font-size: .82rem;
+      text-transform: uppercase;
+      color: #315044;
+    }
+
+    .compare tr:last-child td { border-bottom: 0; }
+
+    .sources {
+      columns: 2;
+      column-gap: 34px;
+      margin-top: 20px;
+      font-size: .94rem;
+      line-height: 1.55;
+    }
+
+    .sources li {
+      break-inside: avoid;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      padding: 36px 0 48px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 980px) {
+      .hero-strip,
+      .quick-grid,
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .section-title {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hero {
+        min-height: 88vh;
+      }
+
+      .hero-inner {
+        width: min(100% - 26px, 1180px);
+        padding-bottom: 14vh;
+      }
+
+      .wrap {
+        width: min(100% - 26px, 1180px);
+      }
+
+      .hero-strip,
+      .quick-grid,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: 0;
+      }
+
+      .day {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .compare {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .sources {
+        columns: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">Family dossier · Amsterdam + Netherlands · Ages 4 and 6</div>
+      <h1>Amsterdam With Small Kids, Built Around Real Energy Levels</h1>
+      <p>A curated, source-backed report for a mid-June 2026 trip: hands-on museums, canals, animals, parks, castles, windmills, and a few worthwhile day trips beyond Amsterdam.</p>
+      <div class="hero-strip" aria-label="Trip summary">
+        <div class="hero-stat"><strong>1 anchor</strong><span>per day keeps it fun</span></div>
+        <div class="hero-stat"><strong>4-6 hrs</strong><span>best daily sightseeing window</span></div>
+        <div class="hero-stat"><strong>28 dossiers</strong><span>Amsterdam + Netherlands</span></div>
+        <div class="hero-stat"><strong>11 top</strong><span>priority picks</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section wrap" id="brief">
+      <div class="section-title">
+        <h2>The Shortlist</h2>
+        <p class="lede">For a 4- and 6-year-old, the highest-value days are tactile, visual, and forgiving: touch science, boats, animals, playgrounds, and bite-sized art. Reserve high-demand timed tickets early, and build in snack/play pauses instead of trying to “complete” Amsterdam.</p>
+      </div>
+      <div class="notice"><b>Anna Everywhere signal:</b> Anna’s Netherlands-with-kids guide is strongest on one big point: Amsterdam is good, but the most kid-rewarding Dutch days are often just outside it. This report now blends her recommendations with official attraction details so the ideas stay practical for booking.</div>
+      <div class="quick-grid">
+        <article class="quick-card">
+          <h3>Best Amsterdam anchors</h3>
+          <ul>
+            <li>NEMO Science Museum</li>
+            <li>ARTIS Zoo + Planetarium</li>
+            <li>National Maritime Museum</li>
+            <li>Rijksmuseum family route + Vondelpark</li>
+          </ul>
+        </article>
+        <article class="quick-card">
+          <h3>Best beyond Amsterdam</h3>
+          <ul>
+            <li>Efteling for a full fairytale theme-park day</li>
+            <li>Utrecht for Miffy Museum + Railway Museum</li>
+            <li>Madurodam + Scheveningen beach near The Hague</li>
+            <li>Zaanse Schans for an easy windmill half-day</li>
+          </ul>
+        </article>
+        <article class="quick-card">
+          <h3>Anna’s practical takeaways</h3>
+          <ul>
+            <li>Consider Haarlem or Leiden if you want a calmer base</li>
+            <li>Use trains often, but rent a car for far-flung kid days</li>
+            <li>Do not bike Amsterdam with kids unless you are confident</li>
+            <li>Look for kinderboerderijen, play cafes, and market snacks</li>
+          </ul>
+        </article>
+        <article class="quick-card">
+          <h3>Timing reality</h3>
+          <p>Mid-June is good for parks, canals, outdoor museums, and beaches. Keukenhof is not a fit for this trip timing: its 2026 public season ended on May 12.</p>
+        </article>
+      </div>
+    </section>
+
+    <nav class="filters" aria-label="Filter recommendations">
+      <div class="wrap filter-row">
+        <button class="filter-button active" data-filter="all">All places</button>
+        <button class="filter-button" data-filter="top">Top picks</button>
+        <button class="filter-button" data-filter="amsterdam">Amsterdam</button>
+        <button class="filter-button" data-filter="daytrip">Day trips</button>
+        <button class="filter-button" data-filter="rain">Rainy day</button>
+        <button class="filter-button" data-filter="outdoor">Outdoor</button>
+        <button class="filter-button" data-filter="book">Book ahead</button>
+      </div>
+    </nav>
+
+    <section class="section wrap" id="dossiers">
+      <div class="section-title">
+        <h2>Place Dossiers</h2>
+        <p class="lede">Each card is written for parents making tradeoffs with young kids: why it works, what to watch for, how long to spend, and what to pair nearby.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card" data-tags="top amsterdam rain book">
+          <div class="photo">
+            <span class="rank">Top pick</span>
+            <img alt="NEMO Science Museum in Amsterdam" src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>NEMO Science Museum</h3>
+            <div class="meta"><span class="pill blue">Amsterdam</span><span class="pill">Hands-on</span><span class="pill yellow">2.5-4 hrs</span></div>
+            <p class="summary">The safest “yes” for ages 4 and 6: five floors of push-button, pour-water, build-and-test science, plus a roof with city views when everyone needs air.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> the official visit page lists admission from age 4 and timed entry. The museum itself says weekday afternoons after 14:00 are often less busy.</div>
+              <div><b>Parent move:</b> go at opening or after lunch, accept that you will not do every floor, and save the roof for decompression.</div>
+              <div><b>Pair with:</b> Maritime Museum, Oosterdok waterfront, or a simple canal walk back toward Centraal.</div>
+            </div>
+            <div class="source-links"><a href="https://www.nemosciencemuseum.nl/en/plan-your-visit">Official visit info</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="top amsterdam outdoor book">
+          <div class="photo">
+            <span class="rank">Top pick</span>
+            <img alt="Flamingos and greenery at a zoo" src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>ARTIS Zoo + Planetarium</h3>
+            <div class="meta"><span class="pill blue">Amsterdam</span><span class="pill">Animals</span><span class="pill yellow">3-5 hrs</span></div>
+            <p class="summary">A classic animal day inside the city, with enough variety for different moods: zoo paths, planetarium shows, gardens, snacks, and the Plantage neighborhood.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> ARTIS lists daily zoo hours of 09:00-18:00, online child pricing for ages 3-12, and includes the Planetarium with zoo admission.</div>
+              <div><b>Parent move:</b> arrive early, do the animals first, use the Planetarium or cafe as a reset. The Aquarium is closed for longer renovation, so do not plan around it.</div>
+              <div><b>Pair with:</b> Hortus Botanicus area, Micropia for an older-kid science add-on, or dinner around de Plantage.</div>
+            </div>
+            <div class="source-links"><a href="https://www.artis.nl/en/plan-your-visit">Official visit info</a><a href="https://www.artis.nl/en/plan-your-visit/opening-hours">Hours</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="top amsterdam rain book">
+          <div class="photo">
+            <span class="rank">Top pick</span>
+            <img alt="Historic sailing ship detail" src="https://images.unsplash.com/photo-1527685609591-44b0aef2400b?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>National Maritime Museum</h3>
+            <div class="meta"><span class="pill blue">Amsterdam</span><span class="pill">Ships</span><span class="pill yellow">2-3.5 hrs</span></div>
+            <p class="summary">One of the best museum matches for these ages because it is not just looking at objects: the replica East Indiaman gives kids a ship to board, steer, and imagine.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> the museum highlights family programming, an interactive exhibition for ages 2-6, a junior audio tour, family restrooms, and the East Indiaman experience.</div>
+              <div><b>Parent move:</b> treat it as a movement museum, not a quiet museum. Start with the ship before museum fatigue hits.</div>
+              <div><b>Pair with:</b> NEMO is nearby, but doing both fully is a long day; choose one as the anchor and keep the other short.</div>
+            </div>
+            <div class="source-links"><a href="https://www.hetscheepvaartmuseum.com/whats-on/families-and-children">Official family info</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="top amsterdam rain book">
+          <div class="photo">
+            <span class="rank">Art intro</span>
+            <img alt="Rijksmuseum exterior in Amsterdam" src="https://images.unsplash.com/photo-1584003564911-a7a321c84e1c?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Rijksmuseum Family Route</h3>
+            <div class="meta"><span class="pill blue">Amsterdam</span><span class="pill">Art + stories</span><span class="pill yellow">90 min-2.5 hrs</span></div>
+            <p class="summary">The big museum that can still work for small kids if you keep it tactical: ships, dollhouses, weapons, the Night Watch, and a family route instead of a full museum march.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> the museum promotes family quests, interactive tours, workshops, and free admission for everyone up to 18. It is open daily 09:00-17:00.</div>
+              <div><b>Parent move:</b> pre-pick 4-5 objects, then exit while the kids still like museums. Use Museumplein or Vondelpark afterward.</div>
+              <div><b>Pair with:</b> Van Gogh Museum only if your kids handle a second short museum; otherwise playground time wins.</div>
+            </div>
+            <div class="source-links"><a href="https://www.rijksmuseum.nl/en/families-and-children">Official family info</a><a href="https://www.rijksmuseum.nl/en/families-and-children/family-route">Family route</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="amsterdam outdoor">
+          <div class="photo">
+            <span class="rank">Reset day</span>
+            <img alt="Vondelpark green lawn and path" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Vondelpark + Kinderkookkafe</h3>
+            <div class="meta"><span class="pill blue">Amsterdam</span><span class="pill">Playground</span><span class="pill yellow">1.5-3 hrs</span></div>
+            <p class="summary">Your best low-pressure Amsterdam recovery block: playgrounds, lawns, scooting, snacks, and a child-centered cooking cafe near the park.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Vondelpark is central to the Museum Quarter, so it absorbs overflow energy after Rijksmuseum or Van Gogh. Kinderkookkafe posts daily 10:00-17:00 hours and is built around kids cooking and serving.</div>
+              <div><b>Parent move:</b> use this as the plan, not filler. Kids this age often remember the playground as clearly as the museum.</div>
+              <div><b>Pair with:</b> Museumplein, pancakes, or a short tram ride back to your hotel.</div>
+            </div>
+            <div class="source-links"><a href="https://vondelpark.info/ondernemer/kinderkookkafe/">Kinderkookkafe info</a><a href="https://vondelpark.com/wp-content/uploads/2020/09/vondelpark_map.pdf">Park map</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="top amsterdam outdoor">
+          <div class="photo">
+            <span class="rank">Boat day</span>
+            <img alt="Pancakes on a table" src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Pancake Boat or Canal Cruise</h3>
+            <div class="meta"><span class="pill blue">Amsterdam</span><span class="pill">Canals</span><span class="pill yellow">1-1.5 hrs</span></div>
+            <p class="summary">A canal cruise is the grown-up Amsterdam box ticked in a child-friendly form. The Pancake Boat adds unlimited pancakes and an easy hook for kids.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> I amsterdam describes the Pancake Boat as a one-hour sail with unlimited pancakes from the NDSM area; longer cruises also exist.</div>
+              <div><b>Parent move:</b> choose a shorter daytime sailing, not a late dinner cruise. The free ferry to Amsterdam-Noord can make the journey part of the fun.</div>
+              <div><b>Pair with:</b> A'DAM Lookout observation deck, Eye Filmmuseum exterior, or a relaxed Noord waterfront walk.</div>
+            </div>
+            <div class="source-links"><a href="https://www.iamsterdam.com/en/whats-on/calendar/eating-and-drinking/restaurants/pancakeboat">I amsterdam info</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="amsterdam outdoor">
+          <div class="photo">
+            <span class="rank">Nature</span>
+            <img alt="Goat at a farm" src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Amsterdamse Bos + Goat Farm</h3>
+            <div class="meta"><span class="pill blue">Amsterdam area</span><span class="pill">Animals + forest</span><span class="pill yellow">2-4 hrs</span></div>
+            <p class="summary">A very good “get out of the city center” morning: forest playgrounds, paddling pools in warm weather, adventure trails, and Ridammerhoeve goat farm.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Amsterdamse Bos lists children’s playgrounds, play islands, paddling pools, an adventure trail, and the Ridammerhoeve goat farm with petting zoo, cheese factory, and playground.</div>
+              <div><b>Parent move:</b> bring spare clothes if you may use water play. This is better as a slow half-day than a squeezed add-on.</div>
+              <div><b>Pair with:</b> a light dinner back in Amsterdam Zuid or a rest afternoon.</div>
+            </div>
+            <div class="source-links"><a href="https://www.amsterdamsebos.nl/english/what-to-do/">Official activities</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="amsterdam outdoor">
+          <div class="photo">
+            <span class="rank">Anna pick</span>
+            <img alt="Children playing in a sunny park" src="https://images.unsplash.com/photo-1526634332515-d56c5fd16991?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Amstelpark + De Pijp Market Snacks</h3>
+            <div class="meta"><span class="pill blue">Amsterdam</span><span class="pill">Play + food</span><span class="pill yellow">2-4 hrs</span></div>
+            <p class="summary">A very Anna-style Amsterdam day: less famous than Museumplein, but more relaxed for kids. Pair Amstelpark’s playground/maze/train energy with poffertjes or stroopwafels around De Pijp.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Anna calls out Amstelpark for its big playground, maze, nearby goat/sheep farm, and summer miniature train; she also prefers De Pijp market snacks over tourist-trap stroopwafels.</div>
+              <div><b>Parent move:</b> make this your “ordinary Dutch kid day” instead of another attraction-heavy block.</div>
+              <div><b>Pair with:</b> Albert Cuyp Market, Sarphatipark, or a light tram ride back before dinner.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/amsterdam-with-kids/">Anna: Amsterdam with kids</a><a href="https://www.iamsterdam.com/en/whats-on/calendar/attractions-and-sights/parks-and-nature/amstelpark">I amsterdam: Amstelpark</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="amsterdam daytrip outdoor book">
+          <div class="photo">
+            <span class="rank">Castle</span>
+            <img alt="Medieval castle by water" src="https://images.unsplash.com/photo-1520637736862-4d197d17c93a?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Muiderslot Castle</h3>
+            <div class="meta"><span class="pill blue">Near Amsterdam</span><span class="pill">Knights</span><span class="pill yellow">2.5-4 hrs</span></div>
+            <p class="summary">A near-perfect young-kid castle: towers, bridges, gardens, dressing-up energy, and weekend/vacation creative workshops.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Muiderslot’s children page explicitly calls out knights, towers, secret passageways, outdoor play, castle gardens, and creative castle workshops.</div>
+              <div><b>Parent move:</b> choose this instead of a second museum if the kids need fantasy and movement.</div>
+              <div><b>Pair with:</b> a simple Muiden waterfront lunch or a quiet afternoon back at the hotel.</div>
+            </div>
+            <div class="source-links"><a href="https://muiderslot.nl/en/discover-the-muiderslot/for-children/">Official children info</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="top daytrip outdoor book">
+          <div class="photo">
+            <span class="rank">Easy half-day</span>
+            <img alt="Windmill in the Netherlands" src="https://images.unsplash.com/photo-1558551649-e44c8f992010?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Zaanse Schans</h3>
+            <div class="meta"><span class="pill blue">20 min north</span><span class="pill">Windmills</span><span class="pill yellow">3-5 hrs</span></div>
+            <p class="summary">The most efficient windmill/clogs/cheese day from Amsterdam: scenic enough for adults, concrete enough for kids, and easy to keep short.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> the official site describes a free-to-enter windmill village 20 minutes north of Amsterdam, with mills, crafts, museums, shops, restaurants, and walking trails. Windmills and some museums charge separately.</div>
+              <div><b>Parent move:</b> arrive early, do one paid windmill plus free craft stops, and leave before the coach-tour crush becomes the main event.</div>
+              <div><b>Pair with:</b> Zaandam lunch, or combine with a very short Amsterdam afternoon.</div>
+            </div>
+            <div class="source-links"><a href="https://www.zaanseschans.com/en/">Official site</a><a href="https://www.dezaanseschans.nl/en/plan-your-visit/opening-hours/">Opening hours</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="top daytrip outdoor book">
+          <div class="photo">
+            <span class="rank">Big day</span>
+            <img alt="Fairytale forest path" src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Efteling</h3>
+            <div class="meta"><span class="pill blue">Kaatsheuvel</span><span class="pill">Theme park</span><span class="pill yellow">Full day</span></div>
+            <p class="summary">The Netherlands’ most distinctive theme-park day for this age range: fairytales, gentle rides, carousels, steam train, dark rides, playgrounds, and enough atmosphere for adults.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Efteling’s “littlest ones” page lists Fairytale Forest, steam carousel, playgrounds, pedal trains, Carnaval Festival, Anton Pieckplein carousels, Stoomtrein, Kleuterhof, and more.</div>
+              <div><b>Parent move:</b> this is worth it only as a full commitment. Stay nearby or accept a long travel day. Download the app, prioritize Fairytale Forest and gentle rides first.</div>
+              <div><b>Pair with:</b> nothing major. Let this be the day.</div>
+            </div>
+            <div class="source-links"><a href="https://www.efteling.com/en/park/littlest-ones">Official littlest-ones guide</a><a href="https://www.efteling.com/en/park/attractions/fairytale-forest">Fairytale Forest</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="top daytrip outdoor book">
+          <div class="photo">
+            <span class="rank">Anna favorite</span>
+            <img alt="Children's outdoor playground" src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Linnaeushof</h3>
+            <div class="meta"><span class="pill blue">Near Haarlem</span><span class="pill">Huge playground</span><span class="pill yellow">3-6 hrs</span></div>
+            <p class="summary">This was the biggest missing pick. Anna is emphatic about it, and the official site backs up why: Europe’s largest playground, built around active, human-powered play.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Linnaeushof says it has more than 350 play sets and attractions, plus a water playground. That is exactly the right kind of “not another museum” day for ages 4 and 6.</div>
+              <div><b>Parent move:</b> bring swim clothes, towels, and low expectations about leaving quickly. Anna says 3 hours is a bare minimum; a 4-6 hour stay is realistic.</div>
+              <div><b>Pair with:</b> Haarlem as a calmer base or a simple dinner, not another big attraction.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/netherlands-with-kids/">Anna: Netherlands with kids</a><a href="https://www.linnaeushof.nl/en/">Official site</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="top daytrip outdoor rain book">
+          <div class="photo">
+            <span class="rank">Water park</span>
+            <img alt="Water slide at a family water park" src="https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Duinrell + Tikibad</h3>
+            <div class="meta"><span class="pill blue">Wassenaar</span><span class="pill">Amusement + water</span><span class="pill yellow">Full day</span></div>
+            <p class="summary">Anna suggests Duinrell as a Eurocamp-style stay or day trip: amusement park, water park, kid facilities, and beach-country surroundings near Leiden/Haarlem/The Hague.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Duinrell’s official English page sells day tickets for the amusement park and combinations with the Tiki Pool; it also emphasizes rides for young and old, accommodations, and indoor/outdoor fun.</div>
+              <div><b>Parent move:</b> this is a better “base for a few relaxed days” option than a casual add-on. If doing Tikibad, check height/swim rules carefully for the 4-year-old.</div>
+              <div><b>Pair with:</b> Wassenaar, Scheveningen, Leiden, or nothing else if the pool is part of the day.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/netherlands-with-kids/">Anna: Netherlands with kids</a><a href="https://www.duinrell.com/amusement-park">Official amusement park</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="top daytrip rain outdoor book">
+          <div class="photo">
+            <span class="rank">Mini NL</span>
+            <img alt="Miniature city model" src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Madurodam + Scheveningen</h3>
+            <div class="meta"><span class="pill blue">The Hague</span><span class="pill">Miniatures</span><span class="pill yellow">Half-full day</span></div>
+            <p class="summary">A playful way to preview the whole country in miniature, with moving models and kid-scale landmarks. Add Scheveningen beach if weather cooperates.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Madurodam presents Dutch landmarks and experiences in an interactive miniature park and says it is open 365 days a year. Its FAQ notes water play, so bring water shoes and spare clothes.</div>
+              <div><b>Parent move:</b> best as a fair-weather The Hague day. Keep the beach flexible rather than mandatory.</div>
+              <div><b>Pair with:</b> Scheveningen beach, SEA LIFE if rain appears, or a short The Hague cafe stop.</div>
+            </div>
+            <div class="source-links"><a href="https://www.madurodam.nl/en/the-park/for-the-whole-family">Official family info</a><a href="https://www.madurodam.nl/en/practical-information/faq">FAQ</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="top daytrip rain book">
+          <div class="photo">
+            <span class="rank">Utrecht</span>
+            <img alt="Children's books and playful colors" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Miffy Museum + Railway Museum</h3>
+            <div class="meta"><span class="pill blue">Utrecht</span><span class="pill">Play + trains</span><span class="pill yellow">Full day</span></div>
+            <p class="summary">Possibly the best age-specific day trip for your exact kids: Miffy is designed for preschoolers, while the Railway Museum gives the 6-year-old more scale and movement.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> the Miffy Museum sells timed tickets only online, is open Tuesday-Sunday 10:00-17:00, and prices ages 2-6 separately. The Railway Museum has visitor info for its own Utrecht Maliebaan station train on open days.</div>
+              <div><b>Parent move:</b> do Miffy first for the 4-year-old, lunch, then Railway Museum if everyone still has stamina.</div>
+              <div><b>Pair with:</b> Utrecht canals and a pancake lunch, not another formal museum.</div>
+            </div>
+            <div class="source-links"><a href="https://nijntjemuseum.nl/en/times-and-prices/">Miffy times/prices</a><a href="https://www.spoorwegmuseum.nl/en/visit/visitor-information/">Railway visitor info</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="daytrip rain book">
+          <div class="photo">
+            <span class="rank">Dinosaurs</span>
+            <img alt="Dinosaur skeleton in a museum" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Naturalis Biodiversity Center</h3>
+            <div class="meta"><span class="pill blue">Leiden</span><span class="pill">Dinosaurs</span><span class="pill yellow">3-4 hrs</span></div>
+            <p class="summary">A strong rainy-day or science-loving day trip, anchored by T. rex Trix and big natural-history halls that are easier for kids to understand than many adult museums.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Naturalis describes family exploration through themed exhibition halls and specifically highlights T. rex Trix, scientist questions, nature finds, and specimen preparation.</div>
+              <div><b>Parent move:</b> pair with a short Leiden walk only if the museum does not consume everyone.</div>
+              <div><b>Pair with:</b> Leiden canals, quick lunch near the station, or nothing else.</div>
+            </div>
+            <div class="source-links"><a href="https://www.naturalis.nl/en/museum">Official museum info</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="daytrip rain book">
+          <div class="photo">
+            <span class="rank">Age 6+</span>
+            <img alt="Human anatomy museum exhibit" src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>CORPUS Experience</h3>
+            <div class="meta"><span class="pill blue">Oegstgeest/Leiden</span><span class="pill">Human body</span><span class="pill yellow">2-3 hrs</span></div>
+            <p class="summary">A memorable “Magic School Bus in real life” add-on for the 6-year-old, with one caveat: the recommended age starts at 6, so the 4-year-old’s temperament matters.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> CORPUS describes a journey through the human body plus an interactive section with exhibits, games, and experiments; official school info says the journey is recommended for ages 6 and up.</div>
+              <div><b>Parent move:</b> choose this if both kids are anatomy-curious and not easily unsettled by body sounds/images. Otherwise Naturalis is the safer Leiden science day.</div>
+              <div><b>Pair with:</b> Naturalis only for museum-loving kids; otherwise Leiden lunch and canals.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/netherlands-with-kids/">Anna: Netherlands with kids</a><a href="https://corpusexperience.world/">Official site</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="daytrip outdoor book">
+          <div class="photo">
+            <span class="rank">Living history</span>
+            <img alt="Roman reenactment and historic village atmosphere" src="https://images.unsplash.com/photo-1514986888952-8cd320577b68?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Archeon Museum Park</h3>
+            <div class="meta"><span class="pill blue">Alphen aan den Rijn</span><span class="pill">Hands-on history</span><span class="pill yellow">Full day</span></div>
+            <p class="summary">A strong Anna pick for kids under 9: prehistory, Romans, medieval life, reenactors, crafts, and enough doing to keep young kids engaged.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> the official site describes living Dutch history from prehistory through Roman and medieval periods, with fire making, legionary drills, sword fighting, and reconstructed buildings.</div>
+              <div><b>Parent move:</b> this is better for a full day from Leiden/Haarlem than a squeezed Amsterdam side quest.</div>
+              <div><b>Pair with:</b> Leiden as a base, or keep it as a standalone “history playground” day.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/netherlands-with-kids/">Anna: Netherlands with kids</a><a href="https://www.archeon.nl/index.html">Official site</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="daytrip outdoor book">
+          <div class="photo">
+            <span class="rank">UNESCO</span>
+            <img alt="Dutch windmills by water" src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Kinderdijk</h3>
+            <div class="meta"><span class="pill blue">South Holland</span><span class="pill">Real windmills</span><span class="pill yellow">Full day</span></div>
+            <p class="summary">More authentic and landscape-driven than Zaanse Schans, but farther. Best if your family really wants windmills, water engineering, and open space.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Kinderdijk is a UNESCO World Heritage site with museum mills, a floating exhibition, boat options, and millers who explain how the system works.</div>
+              <div><b>Parent move:</b> choose Kinderdijk or Zaanse Schans, not both unless windmills are the trip theme. Zaanse is easier from Amsterdam; Kinderdijk is more epic.</div>
+              <div><b>Pair with:</b> Rotterdam only if the adults really want it; otherwise return after the windmills.</div>
+            </div>
+            <div class="source-links"><a href="https://kinderdijk.nl/en/">Official site</a><a href="https://kinderdijk.nl/en/visit-the-windmills/">Visit the windmills</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="daytrip outdoor book">
+          <div class="photo">
+            <span class="rank">Living history</span>
+            <img alt="Historic village building" src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Netherlands Open Air Museum</h3>
+            <div class="meta"><span class="pill blue">Arnhem</span><span class="pill">Hands-on history</span><span class="pill yellow">Full day</span></div>
+            <p class="summary">A bigger commitment, but genuinely memorable: historic buildings, craftspeople, tram rides, workshops, and a children’s farm area where young kids can do rather than observe.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> the museum highlights more than 100 historic buildings, crafts, a playground, Kindererf, historic tram rides, and hands-on child activities.</div>
+              <div><b>Parent move:</b> only pick this if you want a countryside-style Dutch culture day and can handle the travel. It competes with Efteling for time.</div>
+              <div><b>Pair with:</b> no major add-on; the museum is the destination.</div>
+            </div>
+            <div class="source-links"><a href="https://www.openluchtmuseum.nl/nl/uitje-met-kinderen">Official children info</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="daytrip outdoor">
+          <div class="photo">
+            <span class="rank">Friday</span>
+            <img alt="Cheese wheels at a Dutch market" src="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Alkmaar Cheese Market</h3>
+            <div class="meta"><span class="pill blue">Alkmaar</span><span class="pill">Market</span><span class="pill yellow">Morning</span></div>
+            <p class="summary">Anna recommends Alkmaar over Gouda with kids because it gives you the traditional cheese-market spectacle with a less punishing crowd.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> the market spectacle is simple for young kids to understand: cheese wheels, carriers, weighing, costumes, and a pretty old town.</div>
+              <div><b>Parent move:</b> only do this if your trip has a Friday morning free. Arrive early, watch 30-45 minutes, then leave before attention evaporates.</div>
+              <div><b>Pair with:</b> a town walk, snacks, or nearby beach time if you have a car.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/netherlands-with-kids/">Anna: Netherlands with kids</a><a href="https://www.kaasmarkt.nl/en">Official cheese market</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="daytrip rain outdoor book">
+          <div class="photo">
+            <span class="rank">Planes</span>
+            <img alt="Aircraft museum with vintage airplane" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Aviodrome Aviation Museum</h3>
+            <div class="meta"><span class="pill blue">Lelystad</span><span class="pill">Planes</span><span class="pill yellow">3-5 hrs</span></div>
+            <p class="summary">An Anna pick that is especially good if either child is in a planes phase: indoor exhibits, outdoor aircraft, play space, and actual airport setting.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Museum.nl describes more than 6,000 square meters of aviation stories, a Boeing 747 to board, and a playground where kids learn baggage handling.</div>
+              <div><b>Parent move:</b> this is not the most efficient day from Amsterdam, but it can be a winner for aviation-obsessed kids or as part of a car-based Lelystad day.</div>
+              <div><b>Pair with:</b> Hans & Grietje if driving and you want a very kid-heavy day, though that may be a lot.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/netherlands-with-kids/">Anna: Netherlands with kids</a><a href="https://www.museum.nl/en/luchtvaartmuseum-aviodrome">Museum.nl info</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="daytrip outdoor book">
+          <div class="photo">
+            <span class="rank">Pancakes</span>
+            <img alt="Fairytale pancake restaurant and play area" src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Hans & Grietje + Oud Valkeveen</h3>
+            <div class="meta"><span class="pill blue">Zeewolde/Naarden</span><span class="pill">Play + pancakes</span><span class="pill yellow">Half-full day</span></div>
+            <p class="summary">A deeply kid-centric combination from Anna’s Lelystad-area list: a fairytale pancake house with play areas, plus a small amusement park that works well for under-8s.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> local tourism describes Hans & Grietje as a magical pancake house and playground with moving rooms, play cellar, candy-house play, go-karts, and outdoor play. Oud Valkeveen is positioned as a family play park for children up to 12.</div>
+              <div><b>Parent move:</b> reservations are the whole game for Hans & Grietje. This is also a car day, not a graceful public-transport day.</div>
+              <div><b>Pair with:</b> Aviodrome if you are ambitious, but with ages 4 and 6 this may be enough on its own.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/netherlands-with-kids/">Anna: Netherlands with kids</a><a href="https://www.puurzeewolde.nl/en/hans-grietje-pannenkoekenhuis-en-speelpark">Hans & Grietje info</a><a href="https://www.oudvalkeveen.nl/">Oud Valkeveen</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="amsterdam rain book">
+          <div class="photo">
+            <span class="rank">Short art</span>
+            <img alt="Sunflowers in a vase" src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Van Gogh Museum</h3>
+            <div class="meta"><span class="pill blue">Amsterdam</span><span class="pill">Art</span><span class="pill yellow">60-90 min</span></div>
+            <p class="summary">Worth considering if the adults care about Van Gogh, but keep it short. It is less naturally kinetic than NEMO or Maritime, so frame it as colors, sunflowers, bedrooms, and drawing.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> the museum maintains children’s content and activities, including Van Gogh-inspired art activities for children of all ages.</div>
+              <div><b>Parent move:</b> do not pair it with a long Rijksmuseum visit unless your children are museum-tested. Use it as a compact stop plus playground.</div>
+              <div><b>Pair with:</b> Museumplein lawn, Vondelpark, or a snack break.</div>
+            </div>
+            <div class="source-links"><a href="https://www.vangoghmuseum.nl/en/art-and-stories/children">Official children info</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="amsterdam rain">
+          <div class="photo">
+            <span class="rank">Backup</span>
+            <img alt="Indoor playground climbing area" src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>TunFun or Indoor Play Backup</h3>
+            <div class="meta"><span class="pill blue">Amsterdam</span><span class="pill">Rain plan</span><span class="pill yellow">1.5-3 hrs</span></div>
+            <p class="summary">Keep one pure play option in reserve for rain, jet lag, or museum overload. This is not why you fly to Amsterdam, but it can save a day.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> family listings describe TunFun as an indoor playground for roughly ages 1-12, with slides, trampolines, climbing, and central location near Waterlooplein.</div>
+              <div><b>Parent move:</b> verify current operation directly before relying on it; indoor playground details can change more often than museum info.</div>
+              <div><b>Pair with:</b> Jewish Quarter, ARTIS area, or a short cafe stop.</div>
+            </div>
+            <div class="source-links"><a href="https://tripomatic.com/en/poi/tunfun-indoor-playground-poi%3A44221">Listing info</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="amsterdam rain">
+          <div class="photo">
+            <span class="rank">Rain buffer</span>
+            <img alt="Cafe table with children's toys" src="https://images.unsplash.com/photo-1551972873-b7e8754e8e26?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Play Cafes + Monkey Town Backup</h3>
+            <div class="meta"><span class="pill blue">Amsterdam</span><span class="pill">Rain plan</span><span class="pill yellow">1.5-3 hrs</span></div>
+            <p class="summary">Anna’s Amsterdam rain advice is refreshingly practical: keep play cafes and soft-play rooms in the back pocket for the inevitable low-energy wet spell.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> she names De Kleine Parade, Club Abbey, Kinderkook Cafe, Candy Castle, Monkey Town Amsterdam, Fun Center Amstelveen, and Jimmy’s Speelparadijs as rainy-day options.</div>
+              <div><b>Parent move:</b> verify current hours before going; these smaller kid spaces change faster than major museums.</div>
+              <div><b>Pair with:</b> nothing formal. This is a sanity-preserving pressure valve.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/amsterdam-with-kids/">Anna: Amsterdam with kids</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="daytrip outdoor rain">
+          <div class="photo">
+            <span class="rank">Beach</span>
+            <img alt="Wide sandy beach and boardwalk" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Scheveningen Beach + SEA LIFE</h3>
+            <div class="meta"><span class="pill blue">The Hague</span><span class="pill">Beach</span><span class="pill yellow">2-5 hrs</span></div>
+            <p class="summary">Anna calls Scheveningen the best wide beach option, and it pairs naturally with Madurodam. SEA LIFE gives you a weather fallback without abandoning the coast.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> beach digging, boardwalk cafes, cold-water splashing, and aquarium creatures are all legible for a 4- and 6-year-old.</div>
+              <div><b>Parent move:</b> bring layers. North Sea beach weather can be breezy even when the calendar says summer.</div>
+              <div><b>Pair with:</b> Madurodam first, then beach; or beach first if the forecast looks best in the morning.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/netherlands-with-kids/">Anna: Netherlands with kids</a><a href="https://www.visitdenhaag.com/en/scheveningen">Visit The Hague: Scheveningen</a></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="seasonal outdoor">
+          <div class="photo">
+            <span class="rank">Not June</span>
+            <img alt="Tulip field" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Keukenhof</h3>
+            <div class="meta"><span class="pill rose">Seasonal</span><span class="pill">Tulips</span><span class="pill yellow">Skip for this trip</span></div>
+            <p class="summary">A famous family-friendly flower outing, but not useful for a mid-June 2026 visit because the public garden season has ended.</p>
+            <div class="dossier">
+              <div><b>Why it would fit in spring:</b> Keukenhof lists a playground, animal meadow, maze, scavenger hunt, Miffy playground, wide paved paths, and baby facilities.</div>
+              <div><b>Timing constraint:</b> search sources for 2026 opening hours list the season as March 21-May 12, 2026. By mid-June it is closed.</div>
+              <div><b>Alternative:</b> use Amsterdamse Bos, ARTIS, Zaanse Schans, or Madurodam for outdoor kid energy in June.</div>
+            </div>
+            <div class="source-links"><a href="https://keukenhof.nl/en/facilities/kids/">Official kids info</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap" id="itinerary">
+      <div class="section-title">
+        <h2>Suggested Pacing</h2>
+        <p class="lede">This is a modular plan, not a forced itinerary. Swap days based on weather and ticket availability.</p>
+      </div>
+      <div class="itinerary">
+        <article class="day">
+          <div class="day-num">Day 1</div>
+          <div><h3>Canals + Vondelpark soft landing</h3><p>Start with a short canal cruise or Pancake Boat, then let the kids run at Vondelpark. This keeps the first day recognizably Amsterdam without asking jet-lagged kids to behave in a museum.</p></div>
+        </article>
+        <article class="day">
+          <div class="day-num">Day 2</div>
+          <div><h3>NEMO anchor day</h3><p>Make NEMO the main event. Add the Maritime Museum only if you keep one of the two short; otherwise use the waterfront and snacks as the second half.</p></div>
+        </article>
+        <article class="day">
+          <div class="day-num">Day 3</div>
+          <div><h3>Rijksmuseum sampler + Museumplein/Vondelpark</h3><p>Book the family route or build a tiny object hunt. Leave while everyone still has patience, then recover outdoors.</p></div>
+        </article>
+        <article class="day">
+          <div class="day-num">Day 4</div>
+          <div><h3>ARTIS Zoo</h3><p>Arrive early, do animals and Planetarium, then keep the rest of the day easy. This is enough stimulation for one day.</p></div>
+        </article>
+        <article class="day">
+          <div class="day-num">Day 5</div>
+          <div><h3>Zaanse Schans or Muiderslot</h3><p>Pick windmills/crafts for a classic Dutch half-day, or the castle if your kids are in knights-and-towers mode.</p></div>
+        </article>
+        <article class="day">
+          <div class="day-num">Day 6</div>
+          <div><h3>Linnaeushof or Utrecht</h3><p>If the weather is good, Linnaeushof is probably the best pure kid-energy day from Anna’s list. If it rains or you want trains/books, Utrecht’s Miffy Museum + Railway Museum is easier.</p></div>
+        </article>
+        <article class="day">
+          <div class="day-num">Bonus</div>
+          <div><h3>Choose one major commitment</h3><p>Efteling is the biggest wonder day. Duinrell is best if you want amusement park plus water park. Madurodam is best if you also want The Hague and beach time.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap" id="decisions">
+      <div class="section-title">
+        <h2>Decision Table</h2>
+        <p class="lede">Use this when the weather, ticket inventory, or kid mood changes.</p>
+      </div>
+      <table class="compare">
+        <thead>
+          <tr><th>Situation</th><th>Best choice</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Rainy morning</td><td>NEMO, Maritime Museum, Rijksmuseum, Naturalis, Miffy/Railway, play cafes</td><td>Indoor anchors with enough kid-specific content to justify the effort, plus smaller pressure valves.</td></tr>
+          <tr><td>Sunny but tired</td><td>Vondelpark, Amstelpark, Amsterdamse Bos, canal cruise</td><td>Low compliance burden; kids can move without constant correction.</td></tr>
+          <tr><td>Only one day trip</td><td>Linnaeushof, Efteling, or Utrecht</td><td>Linnaeushof is easiest pure kid joy; Efteling is highest wonder; Utrecht is easiest and age-targeted.</td></tr>
+          <tr><td>Need classic Netherlands photos</td><td>Zaanse Schans</td><td>Windmills, clogs, cheese, and green wooden houses close to Amsterdam.</td></tr>
+          <tr><td>Staying outside Amsterdam</td><td>Haarlem or Leiden</td><td>Anna recommends them as calmer family bases with quick train access and better nearby day-trip geometry.</td></tr>
+          <tr><td>Car day</td><td>Duinrell, Aviodrome, Hans & Grietje, Oud Valkeveen, Schiphol plane spotting</td><td>These are much easier by car than by public transport with a 4- and 6-year-old.</td></tr>
+          <tr><td>Adults want art</td><td>Rijksmuseum family route first, Van Gogh second</td><td>Rijksmuseum has more formal family scaffolding and free child admission.</td></tr>
+          <tr><td>Skip with young kids</td><td>Long adult walking tours, Heineken Experience, full Anne Frank House visit unless parents specifically want it</td><td>Important or famous does not always mean age-appropriate for 4 and 6.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section wrap" id="sources">
+      <div class="section-title">
+        <h2>Sources</h2>
+        <p class="lede">Official pages were prioritized for current hours, age fit, facilities, and ticket notes. Family-travel sources were used only for practical pacing and backup ideas.</p>
+      </div>
+      <ol class="sources">
+        <li><a href="https://annaeverywhere.com/netherlands-with-kids/">Anna Everywhere: The Netherlands with Kids</a></li>
+        <li><a href="https://annaeverywhere.com/amsterdam-with-kids/">Anna Everywhere: Amsterdam with Kids</a></li>
+        <li><a href="https://www.iamsterdam.com/en/see-and-do/family-and-kids">I amsterdam: Family and kids</a></li>
+        <li><a href="https://www.nemosciencemuseum.nl/en/plan-your-visit">NEMO Science Museum: Plan your visit</a></li>
+        <li><a href="https://www.artis.nl/en/plan-your-visit">ARTIS: Plan your visit</a> and <a href="https://www.artis.nl/en/plan-your-visit/opening-hours">opening hours</a></li>
+        <li><a href="https://www.rijksmuseum.nl/en/families-and-children">Rijksmuseum: Families and children</a></li>
+        <li><a href="https://www.vangoghmuseum.nl/en/art-and-stories/children">Van Gogh Museum: Children</a></li>
+        <li><a href="https://www.hetscheepvaartmuseum.com/whats-on/families-and-children">National Maritime Museum: Families and children</a></li>
+        <li><a href="https://www.amsterdamsebos.nl/english/what-to-do/">Amsterdamse Bos: What to do</a></li>
+        <li><a href="https://muiderslot.nl/en/discover-the-muiderslot/for-children/">Muiderslot: For children</a></li>
+        <li><a href="https://www.zaanseschans.com/en/">Zaanse Schans official site</a></li>
+        <li><a href="https://www.efteling.com/en/park/littlest-ones">Efteling: Attractions for the littlest children</a></li>
+        <li><a href="https://www.madurodam.nl/en/the-park/for-the-whole-family">Madurodam: For the whole family</a></li>
+        <li><a href="https://nijntjemuseum.nl/en/times-and-prices/">Miffy Museum: Times and prices</a></li>
+        <li><a href="https://www.spoorwegmuseum.nl/en/visit/visitor-information/">Railway Museum Utrecht: Visitor information</a></li>
+        <li><a href="https://www.naturalis.nl/en/museum">Naturalis: Museum</a></li>
+        <li><a href="https://kinderdijk.nl/en/">Kinderdijk UNESCO World Heritage</a></li>
+        <li><a href="https://www.openluchtmuseum.nl/nl/uitje-met-kinderen">Netherlands Open Air Museum: with children</a></li>
+        <li><a href="https://www.linnaeushof.nl/en/">Linnaeushof official site</a></li>
+        <li><a href="https://www.duinrell.com/amusement-park">Duinrell: Amusement park</a></li>
+        <li><a href="https://corpusexperience.world/">CORPUS Experience official site</a></li>
+        <li><a href="https://www.archeon.nl/index.html">Archeon Museum Park official site</a></li>
+        <li><a href="https://www.kaasmarkt.nl/en">Alkmaar Cheese Market official site</a></li>
+        <li><a href="https://www.museum.nl/en/luchtvaartmuseum-aviodrome">Museum.nl: Aviodrome</a></li>
+        <li><a href="https://www.puurzeewolde.nl/en/hans-grietje-pannenkoekenhuis-en-speelpark">Puur Zeewolde: Hans & Grietje</a></li>
+        <li><a href="https://www.oudvalkeveen.nl/">Oud Valkeveen official site</a></li>
+        <li><a href="https://www.visitdenhaag.com/en/scheveningen">Visit The Hague: Scheveningen</a></li>
+        <li><a href="https://keukenhof.nl/en/facilities/kids/">Keukenhof: Kids facilities</a></li>
+        <li><a href="https://www.iamsterdam.com/en/whats-on/calendar/eating-and-drinking/restaurants/pancakeboat">I amsterdam: Pancake Boat</a></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Prepared June 2026 for a family with kids aged 4 and 6. Re-check timed tickets, closures, and transport before booking.</div>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll(".filter-button");
+    const cards = document.querySelectorAll(".card");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        const filter = button.dataset.filter;
+        cards.forEach((card) => {
+          const tags = card.dataset.tags.split(" ");
+          card.classList.toggle("hidden", filter !== "all" && !tags.includes(filter));
+        });
+      });
+    });
+  </script>
+</body>
+</html>

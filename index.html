@@ -193,6 +193,34 @@
     .quick-card p { margin: 0; }
     .quick-card ul { padding-left: 18px; margin: 0; }
 
+    .report-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .report-tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--ink);
+      padding: 10px 16px;
+      text-decoration: none;
+      font-weight: 820;
+      box-shadow: 0 8px 24px rgba(20, 38, 46, .06);
+    }
+
+    .report-tab.primary {
+      background: var(--ink);
+      color: white;
+      border-color: var(--ink);
+    }
+
     .filters {
       position: sticky;
       top: 0;
@@ -229,6 +257,14 @@
       border-color: var(--ink);
     }
 
+    .restaurant-filters {
+      position: relative;
+      top: auto;
+      margin: 18px 0 4px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -245,6 +281,10 @@
       display: grid;
       grid-template-rows: 164px auto;
       min-height: 630px;
+    }
+
+    .restaurant-card {
+      min-height: 590px;
     }
 
     .card.hidden { display: none; }
@@ -535,6 +575,10 @@
           <h3>Timing reality</h3>
           <p>Mid-June is good for parks, canals, outdoor museums, and beaches. Keukenhof is not a fit for this trip timing: its 2026 public season ended on May 12.</p>
         </article>
+      </div>
+      <div class="report-tabs" aria-label="Report sections">
+        <a class="report-tab primary" href="#dossiers">Activities & places</a>
+        <a class="report-tab" href="#restaurants">Restaurant recommendations</a>
       </div>
     </section>
 
@@ -1124,6 +1168,443 @@
       </table>
     </section>
 
+    <section class="section wrap" id="restaurants">
+      <div class="section-title">
+        <h2>Restaurant Recommendations</h2>
+        <p class="lede">A practical food list for two small kids plus vegetarian Indian grandparents: safe pure-veg meals, Dutch snacks, pancake stops, kid-friendly park cafes, and a few adult-quality dinners that still work with dietary constraints.</p>
+      </div>
+      <div class="notice"><b>Vegetarian guardrail:</b> for your uncle and aunt, prioritize the `Pure veg / vegan` filter when cross-contamination or hidden stock/gelatin/egg matters. Pancakes, fries, and sweets can work for lacto-vegetarians, but confirm eggs, rennet, and shared fryers before ordering.</div>
+
+      <nav class="filters restaurant-filters" aria-label="Filter restaurant recommendations">
+        <div class="filter-row">
+          <button class="filter-button restaurant-filter active" data-rfilter="all">All food</button>
+          <button class="filter-button restaurant-filter" data-rfilter="valeri">Valeri</button>
+          <button class="filter-button restaurant-filter" data-rfilter="anna">Anna</button>
+          <button class="filter-button restaurant-filter" data-rfilter="pureveg">Pure veg / vegan</button>
+          <button class="filter-button restaurant-filter" data-rfilter="kids">Kid-friendly</button>
+          <button class="filter-button restaurant-filter" data-rfilter="grandparents">Grandparents</button>
+          <button class="filter-button restaurant-filter" data-rfilter="sweets">Sweets & snacks</button>
+          <button class="filter-button restaurant-filter" data-rfilter="highquality">Higher quality</button>
+        </div>
+      </nav>
+
+      <div class="cards restaurant-cards">
+        <article class="card restaurant-card" data-rtags="valeri pureveg kids highquality dinner">
+          <div class="photo">
+            <span class="rank">Valeri</span>
+            <img alt="Colorful tacos at a vegetarian Mexican restaurant" src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Madre</h3>
+            <div class="meta"><span class="pill rose">Valeri</span><span class="pill">Pure veg / vegan</span><span class="pill blue">Jordaan</span><span class="pill yellow">Dinner</span></div>
+            <p class="summary">A strong group dinner choice: modern Mexican, fully plant-based/vegetarian-friendly, lively enough for kids, and interesting enough for adults.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Valeri shared it, and Madre’s own site emphasizes modern Mexican food with fresh, locally sourced ingredients in the Jordaan.</div>
+              <div><b>Vegetarian note:</b> this is one of the safest non-Indian dinners for pure vegetarians because the concept is plant-forward; still confirm dairy/egg preferences when booking.</div>
+              <div><b>Parent move:</b> reserve an early table. Great for adults, but late dinner energy could get loud for the 4-year-old.</div>
+            </div>
+            <div class="source-links"><a href="https://www.madre.amsterdam/">Official site</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="valeri anna kids sweets vegetarian brunch">
+          <div class="photo">
+            <span class="rank">Valeri</span>
+            <img alt="Dutch pancakes on a restaurant table" src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>PANCAKES Amsterdam</h3>
+            <div class="meta"><span class="pill rose">Valeri</span><span class="pill rose">Anna-adjacent</span><span class="pill blue">Multiple locations</span><span class="pill yellow">Breakfast/lunch</span></div>
+            <p class="summary">An easy Dutch-pancake stop when you need a predictable kid meal. Better for breakfast or lunch than a serious dinner.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Valeri shared it. PANCAKES Amsterdam says several Dutch pancakes can be made with gluten-free, lactose-free, and vegan batter, and they have a special vegan menu.</div>
+              <div><b>Vegetarian note:</b> good for lacto-vegetarians and vegans if ordered carefully. Not a pure-veg kitchen, so ask about cross-contact.</div>
+              <div><b>Parent move:</b> choose the location that matches your activity path; do not cross town just for it.</div>
+            </div>
+            <div class="source-links"><a href="https://pancakes.amsterdam/contact/faq/">Diet FAQ</a><a href="https://pancakes.amsterdam/vegan-menu/">Vegan menu</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="valeri kids sweets vegetarian brunch">
+          <div class="photo">
+            <span class="rank">Valeri</span>
+            <img alt="Stack of pancakes with berries" src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Madam Pancake</h3>
+            <div class="meta"><span class="pill rose">Valeri</span><span class="pill blue">Red Light area</span><span class="pill">Kids</span><span class="pill yellow">Midday</span></div>
+            <p class="summary">A friend-vouched brunch/lunch stop for American-style pancakes with Dutch touches. Good if you are already central.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Valeri specifically noted this one is in the Red Light area and suggested only going in the middle of the day. The restaurant describes sweet and savory American pancakes with a Dutch twist.</div>
+              <div><b>Vegetarian note:</b> likely workable for lacto-ovo vegetarians; not the best choice for strict pure-veg needs unless you confirm ingredients.</div>
+              <div><b>Parent move:</b> use as a daytime treat, then leave the area. Tiny bit of field wisdom doing useful work here.</div>
+            </div>
+            <div class="source-links"><a href="https://www.madampancake.com/menu/menu">Official menu</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="valeri anna kids sweets vegetarian snack">
+          <div class="photo">
+            <span class="rank">Valeri</span>
+            <img alt="Fresh stroopwafel with caramel" src="https://images.unsplash.com/photo-1621465558419-84e8e78865d8?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Van Holland Stroopwafels</h3>
+            <div class="meta"><span class="pill rose">Valeri</span><span class="pill rose">Anna-style snack</span><span class="pill">Sweet</span><span class="pill yellow">Quick stop</span></div>
+            <p class="summary">A fresh-stroopwafel stop from Valeri’s screenshots. This fits Anna’s broader advice to introduce kids to stroopwafels, though she prefers market stalls over the most touristy decorated versions.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> compact, memorable, and easy for kids. Treat it as a snack, not a meal.</div>
+              <div><b>Vegetarian note:</b> traditional stroopwafels often contain butter and may contain egg; ask about vegan options if needed.</div>
+              <div><b>Parent move:</b> split one or two across the group, because sugar plus walking is a surprisingly decent Amsterdam travel technology.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/amsterdam-with-kids/">Anna: Amsterdam with kids</a><a href="https://stroopwafelworkshop.com/stroopwafels-amsterdam/">Stroopwafel guide</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="valeri kids sweets vegetarian snack">
+          <div class="photo">
+            <span class="rank">Valeri</span>
+            <img alt="Chocolate bars and colorful sweets" src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Tony’s Chocolonely Super Store</h3>
+            <div class="meta"><span class="pill rose">Valeri</span><span class="pill">Chocolate</span><span class="pill blue">Near Centraal</span><span class="pill yellow">Souvenir stop</span></div>
+            <p class="summary">Not a restaurant, but a very shareable chocolate stop near Centraal. Easy win for kids and gifts for family.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Valeri shared the Super Store link; Tony’s says it is about a five-minute walk from Amsterdam Central Station across Damrak.</div>
+              <div><b>Vegetarian note:</b> many chocolate bars are lacto-vegetarian; check labels for gelatin, marshmallow, or alcohol fillings.</div>
+              <div><b>Parent move:</b> pair with Manneken Pis/fries or a Centraal-area transit moment rather than making it a standalone outing.</div>
+            </div>
+            <div class="source-links"><a href="https://tonyschocolonely.com/pages/tonys-super-store">Official store info</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="valeri kids vegetarian snack">
+          <div class="photo">
+            <span class="rank">Valeri</span>
+            <img alt="Cone of Belgian-style fries" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Manneken Pis Fries</h3>
+            <div class="meta"><span class="pill rose">Valeri</span><span class="pill">Fries</span><span class="pill blue">Damrak</span><span class="pill yellow">Snack</span></div>
+            <p class="summary">Classic tourist-path fries, useful when kids are melting down near Centraal or Damrak. The official site lists vegan mayonnaise.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Valeri shared it as a fast-food stop; it is simple, fast, and recognizable to kids.</div>
+              <div><b>Vegetarian note:</b> confirm fryer oil and sauce ingredients if strict vegetarian rules matter. Vegan mayo is available, but that does not by itself confirm fryer separation.</div>
+              <div><b>Parent move:</b> use for emergency calories, not as the group’s main dinner.</div>
+            </div>
+            <div class="source-links"><a href="https://mannekenpis.nl/en">Official site</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="anna kids vegetarian brunch">
+          <div class="photo">
+            <span class="rank">Anna</span>
+            <img alt="Pancake restaurant carousel interior" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Carousel Pancake House</h3>
+            <div class="meta"><span class="pill rose">Anna</span><span class="pill">Kids</span><span class="pill blue">Museum Quarter-ish</span><span class="pill yellow">Lunch</span></div>
+            <p class="summary">Anna’s clearest kid-restaurant endorsement: Dutch pancakes served in an old carousel setting, with enough novelty to carry a meal.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Anna says it kept her kids extremely happy and that the food was excellent; local listings describe Dutch pancakes, savory/sweet options, and poffertjes.</div>
+              <div><b>Vegetarian note:</b> pancakes and poffertjes are usually lacto-ovo vegetarian; strict vegetarians should ask about eggs and rennet in cheese.</div>
+              <div><b>Parent move:</b> pair with Rijksmuseum, Van Gogh Museum, or Vondelpark.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/amsterdam-with-kids/">Anna: Amsterdam with kids</a><a href="https://amsterdamfan.com/listing/carousel-pancake-house/">Listing info</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="anna kids vegetarian sweets snack">
+          <div class="photo">
+            <span class="rank">Anna</span>
+            <img alt="Market stall with fresh waffles and fruit" src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Albert Cuyp Market Snacks</h3>
+            <div class="meta"><span class="pill rose">Anna</span><span class="pill">Stroopwafels</span><span class="pill">Poffertjes</span><span class="pill yellow">Snack walk</span></div>
+            <p class="summary">Anna’s preferred snack strategy: skip the expensive Instagram stroopwafel trap and get stroopwafels/poffertjes from market stalls in De Pijp.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> kid-approved, local-feeling, and easy to combine with Amstelpark or Sarphatipark.</div>
+              <div><b>Vegetarian note:</b> good for lacto-vegetarians, but poffertjes usually contain egg/dairy. Ask before serving strict vegetarians.</div>
+              <div><b>Parent move:</b> this is best before the kids are starving; market lines plus hunger is a tiny procedural bug in the day.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/amsterdam-with-kids/">Anna: Amsterdam with kids</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="anna kids vegetarian grandparents">
+          <div class="photo">
+            <span class="rank">Anna</span>
+            <img alt="Cafe terrace next to a green park playground" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Groot Melkhuis + Vondeltuin</h3>
+            <div class="meta"><span class="pill rose">Anna</span><span class="pill">Playground cafes</span><span class="pill blue">Vondelpark</span><span class="pill yellow">Lunch/snacks</span></div>
+            <p class="summary">The easiest multi-generation food setup: grandparents sit with coffee or lunch, kids play, adults stop negotiating with gravity.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Anna flags both as playground-adjacent Vondelpark restaurants; I amsterdam also calls Groot Melkhuis one of the city’s standout outdoor play cafes.</div>
+              <div><b>Vegetarian note:</b> good for simple vegetarian cafe food, but not pure-veg kitchens.</div>
+              <div><b>Parent move:</b> use after a museum block. This is more logistics magic than destination dining.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/amsterdam-with-kids/">Anna: Amsterdam with kids</a><a href="https://www.iamsterdam.com/en/see-and-do/restaurant-and-bars/best-cafes-with-outdoor-play-areas">I amsterdam play cafes</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="anna kids vegetarian">
+          <div class="photo">
+            <span class="rank">Anna</span>
+            <img alt="Child cooking activity with flour and vegetables" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Kinderkook Cafe</h3>
+            <div class="meta"><span class="pill rose">Anna</span><span class="pill">Kids cook</span><span class="pill blue">Vondelpark</span><span class="pill yellow">Activity meal</span></div>
+            <p class="summary">More activity than restaurant: kids choose simple food to prepare themselves. A great rainy-day or Vondelpark reset for ages 4 and 6.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Anna recommends it for children 3 and up; Amsterdam Mamas describes children making items like pizzas, cookies, smoothies, and cupcakes.</div>
+              <div><b>Vegetarian note:</b> vegetarian items are likely easy, but check the picture menu and ingredients on the day.</div>
+              <div><b>Parent move:</b> grandparents may enjoy watching more than participating. Keep expectations snack-sized.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/amsterdam-with-kids/">Anna: Amsterdam with kids</a><a href="https://amsterdam-mamas.nl/articles/the-mamas-recommend-kindercafes-in-amsterdam/">Amsterdam Mamas</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="anna kids vegetarian sweets daytrip">
+          <div class="photo">
+            <span class="rank">Anna</span>
+            <img alt="Fairytale pancake house and pancakes" src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Hans & Grietje Pancake House</h3>
+            <div class="meta"><span class="pill rose">Anna</span><span class="pill">Day-trip meal</span><span class="pill">Pancakes</span><span class="pill yellow">Reserve</span></div>
+            <p class="summary">A destination pancake house with moving rooms, play spaces, and full fairytale chaos. Food is secondary; kid delight is the point.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Anna says reservations are essential and the experience is fantastic for kids; local tourism describes the play areas and magical pancake-house setup.</div>
+              <div><b>Vegetarian note:</b> pancake-focused, but verify egg/dairy and savory ingredients.</div>
+              <div><b>Parent move:</b> best with a car, possibly paired with Aviodrome or Oud Valkeveen.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/netherlands-with-kids/">Anna: Netherlands with kids</a><a href="https://www.puurzeewolde.nl/en/hans-grietje-pannenkoekenhuis-en-speelpark">Local tourism info</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="anna kids vegetarian grandparents highquality">
+          <div class="photo">
+            <span class="rank">Anna</span>
+            <img alt="Indoor food hall with communal tables" src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Foodhallen</h3>
+            <div class="meta"><span class="pill rose">Anna</span><span class="pill">Group-friendly</span><span class="pill blue">Amsterdam West</span><span class="pill yellow">Flexible meal</span></div>
+            <p class="summary">A good pressure-release meal when one person wants pizza, one wants bowls, kids want simple food, and grandparents need vegetarian choices.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Anna mentions it as a handy family option; De Hallen says Foodhallen has more than twenty kitchens, and vegan/vegetarian sources point to options like Fento, Padrón, Renato’s, and mezze/falafel-style stalls.</div>
+              <div><b>Vegetarian note:</b> not pure veg, but the breadth makes it useful. For strict vegetarians, pick a veg-focused stall and ask about shared surfaces.</div>
+              <div><b>Parent move:</b> go slightly early. Communal seating can get intense at peak time.</div>
+            </div>
+            <div class="source-links"><a href="https://annaeverywhere.com/amsterdam-with-kids/">Anna: Amsterdam with kids</a><a href="https://www.dehallen-amsterdam.nl/in-de-hallen/de-foodhallen">De Hallen info</a><a href="https://www.thefento.com/">Fento</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="pureveg grandparents kids indian">
+          <div class="photo">
+            <span class="rank">Pure veg</span>
+            <img alt="Indian vegetarian thali dishes" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Kailash Parbat</h3>
+            <div class="meta"><span class="pill">100% pure veg</span><span class="pill blue">Weteringschans</span><span class="pill">Indian</span><span class="pill yellow">Grandparents</span></div>
+            <p class="summary">Probably the safest “everyone can eat confidently” restaurant for your Indian vegetarian relatives: familiar North Indian/Sindhi vegetarian food in Amsterdam.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> the official Amsterdam site calls it a “100% Pure Veg Restaurant” and emphasizes North Indian and Sindhi cuisine.</div>
+              <div><b>Vegetarian note:</b> best strict-vegetarian safety profile on this list. Ask separately if no onion/garlic or Jain constraints apply.</div>
+              <div><b>Parent move:</b> keep this as the fallback dinner after a hard sightseeing day.</div>
+            </div>
+            <div class="source-links"><a href="https://www.kailashparbat.nl/">Official site</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="pureveg grandparents kids indian">
+          <div class="photo">
+            <span class="rank">Pure veg</span>
+            <img alt="South Indian dosa and chutneys" src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Saravanaa Bhavan</h3>
+            <div class="meta"><span class="pill">Vegetarian</span><span class="pill blue">Stadhouderskade</span><span class="pill">South Indian</span><span class="pill yellow">Reliable</span></div>
+            <p class="summary">A familiar South Indian vegetarian chain option for dosas, idli, thali-style comfort, and a low-drama meal with grandparents.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Saravanaa Bhavan’s global brand is known for Indian vegetarian food, and Amsterdam listings place it on Stadhouderskade.</div>
+              <div><b>Vegetarian note:</b> strong vegetarian safety; verify Amsterdam-specific menu/hours before going.</div>
+              <div><b>Parent move:</b> good near Museum Quarter/Heineken Experience zone when kids need something plain and adults need spice.</div>
+            </div>
+            <div class="source-links"><a href="https://www.saravanaa-bhavan.nl/">Amsterdam menu/site</a><a href="https://v1.saravanabhavan.com/">Global brand</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="pureveg grandparents highquality dinner">
+          <div class="photo">
+            <span class="rank">Pure veg</span>
+            <img alt="Vegetarian restaurant table with curry and vegetables" src="https://images.unsplash.com/photo-1543353071-10c8ba85a904?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Golden Temple</h3>
+            <div class="meta"><span class="pill">Vegetarian/vegan</span><span class="pill blue">Utrechtsestraat</span><span class="pill">Global/Indian</span><span class="pill yellow">Dinner</span></div>
+            <p class="summary">A central vegetarian/vegan restaurant with Indian roots and enough global range to keep the table interesting.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Golden Temple says it uses no meat, fish, or eggs; many dishes are vegan or can be made vegan.</div>
+              <div><b>Vegetarian note:</b> very good for pure vegetarians, though it uses dairy in some lacto-vegetarian dishes.</div>
+              <div><b>Parent move:</b> better for adults/grandparents than picky kids, but samosas, pakoras, rice, and paneer can bridge the gap.</div>
+            </div>
+            <div class="source-links"><a href="https://www.goldentemple.nl/">Official site</a><a href="https://www.iamsterdam.com/en/see-and-do/eating-and-drinking/vegetarian-restaurants">I amsterdam vegetarian list</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="pureveg grandparents kids highquality">
+          <div class="photo">
+            <span class="rank">Pure veg</span>
+            <img alt="Vegetarian buffet with colorful salads" src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Spirit Amsterdam</h3>
+            <div class="meta"><span class="pill">100% vegetarian</span><span class="pill">Buffet</span><span class="pill blue">Oost</span><span class="pill yellow">Flexible</span></div>
+            <p class="summary">Possibly the easiest mixed-age vegetarian meal: everyone sees the food before choosing, portions are adjustable, and vegan options are clearly part of the concept.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Spirit says its buffet offers around fifty dishes and is 100% organic and 100% vegetarian, with many vegan choices.</div>
+              <div><b>Vegetarian note:</b> excellent for pure-veg diners, though allergens are handled in the same kitchen.</div>
+              <div><b>Parent move:</b> great when the kids are unpredictable and grandparents want variety without menu negotiation.</div>
+            </div>
+            <div class="source-links"><a href="https://www.spiritrestaurants.nl/en/amsterdam_/menu/buffet/">Official buffet info</a><a href="https://www.iamsterdam.com/en/see-and-do/eating-and-drinking/vegetarian-restaurants">I amsterdam vegetarian list</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="pureveg highquality dinner">
+          <div class="photo">
+            <span class="rank">Vegan</span>
+            <img alt="Plant-based burgers and colorful plates" src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Meatless District</h3>
+            <div class="meta"><span class="pill">100% plant-based</span><span class="pill blue">Oud-West</span><span class="pill">Comfort food</span><span class="pill yellow">Dinner</span></div>
+            <p class="summary">A better vegan dinner for adults than a “substitute food” compromise: bold, fully plant-based plates, burgers, tacos, cauliflower, and desserts.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Meatless District describes itself as 100% plant-based with bold house-made food, shared plates, tacos, bitterballen, sliders, and desserts.</div>
+              <div><b>Vegetarian note:</b> pure vegan; safest non-Indian dinner for strict vegetarians if spice/flavor profile works for the group.</div>
+              <div><b>Parent move:</b> check the menu for kid comfort before committing; great if your kids will eat fries, sliders, or familiar shapes.</div>
+            </div>
+            <div class="source-links"><a href="https://meatlessdistrict.nl/en/">Official site</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="pureveg highquality grandparents dinner">
+          <div class="photo">
+            <span class="rank">Vegan Indian</span>
+            <img alt="Indian street food chaat and chutneys" src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>The Vegan Indian</h3>
+            <div class="meta"><span class="pill">Vegan</span><span class="pill">Indian street food</span><span class="pill blue">Amsterdam</span><span class="pill yellow">Strict veg</span></div>
+            <p class="summary">A modern vegan Indian option when you want Indian flavors without dairy or egg complications.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> the restaurant describes itself as authentic vegan Indian street food with vegan, vegetarian, and gluten-free options.</div>
+              <div><b>Vegetarian note:</b> very safe for strict vegetarian needs; also useful if anyone avoids dairy.</div>
+              <div><b>Parent move:</b> use when grandparents want Indian food but you do not want another standard curry-house meal.</div>
+            </div>
+            <div class="source-links"><a href="https://www.theveganindian.nl/">Official site</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="highquality pureveg grandparents dinner">
+          <div class="photo">
+            <span class="rank">Fine dining</span>
+            <img alt="Fine dining vegetable dish in a greenhouse restaurant" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Restaurant De Kas</h3>
+            <div class="meta"><span class="pill">Vegetarian/vegan menu</span><span class="pill blue">Park Frankendael</span><span class="pill">Michelin</span><span class="pill yellow">Adults</span></div>
+            <p class="summary">The high-quality adult meal on the list: vegetable-led, greenhouse setting, Michelin/Green Star credentials, and able to serve vegetarian or vegan menus.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> De Kas says it can serve the menu completely vegetarian or vegan; its menu page notes Gault & Millau, 50 Best Discovery, and Michelin recognition.</div>
+              <div><b>Vegetarian note:</b> excellent for vegetarian fine dining, but fixed-menu restaurants need advance notice for dietary restrictions.</div>
+              <div><b>Parent move:</b> this is more aunt/uncle/adult treat than kid dinner. Consider an early lunch or adult split-out meal.</div>
+            </div>
+            <div class="source-links"><a href="https://restaurantdekas.com/eng/menu">Official menu info</a><a href="https://www.iamsterdam.com/en/see-and-do/restaurant-and-bars/michelin-star-restaurants-in-amsterdam">I amsterdam Michelin list</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="highquality vegetarian grandparents dinner">
+          <div class="photo">
+            <span class="rank">Fine dining</span>
+            <img alt="Elegant vegetable-forward tasting menu" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Bolenius</h3>
+            <div class="meta"><span class="pill">Vegetable-forward</span><span class="pill blue">Zuidas</span><span class="pill">Michelin</span><span class="pill yellow">Adults</span></div>
+            <p class="summary">A polished vegetable-forward restaurant for adults who want something more refined than kid logistics.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> I amsterdam notes Bolenius has a Michelin star and a menu built around vegetables and herbs from its own garden.</div>
+              <div><b>Vegetarian note:</b> vegetable-forward does not automatically mean pure vegetarian; book ahead and clearly state strict vegetarian requirements.</div>
+              <div><b>Parent move:</b> not the first choice with a tired 4-year-old. Great for a grandparents/adults evening if childcare or split plans are possible.</div>
+            </div>
+            <div class="source-links"><a href="https://www.iamsterdam.com/en/see-and-do/eating-and-drinking/restaurant-listing/bolenius/">I amsterdam Bolenius</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="kids vegetarian sweets">
+          <div class="photo">
+            <span class="rank">Diet-friendly</span>
+            <img alt="Rolled pancakes with fruit and chocolate" src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>The Happy Pig Pancake Shop</h3>
+            <div class="meta"><span class="pill">Vegan options</span><span class="pill">Gluten-free</span><span class="pill blue">Centrum</span><span class="pill yellow">Snack/lunch</span></div>
+            <p class="summary">A strong backup pancake stop because it explicitly serves organic rolled pancakes and poffertjes with vegan and gluten-free options.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> The Happy Pig says it has organic ingredients, gluten-free and vegan options, and many vegan choices.</div>
+              <div><b>Vegetarian note:</b> better than many pancake shops for vegans; still confirm strict vegetarian needs.</div>
+              <div><b>Parent move:</b> keep as the “we are central and need something now” backup.</div>
+            </div>
+            <div class="source-links"><a href="https://thehappypig.nl/">Official site</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="kids vegetarian highquality">
+          <div class="photo">
+            <span class="rank">Family pick</span>
+            <img alt="Waterfront restaurant terrace" src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Pllek</h3>
+            <div class="meta"><span class="pill">75% vegetarian menu</span><span class="pill blue">NDSM Noord</span><span class="pill">Waterfront</span><span class="pill yellow">Lunch/dinner</span></div>
+            <p class="summary">A good family waterfront meal in Noord: relaxed, spacious, and much more vegetarian-friendly than the average mixed-menu restaurant.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Pllek says at least 75% of its menu is vegetarian and 25% vegan. Amsterdam Mamas also frames Pllek as a family-friendly city beach terrace.</div>
+              <div><b>Vegetarian note:</b> not pure veg, but a strong mixed-group choice if everyone is comfortable with a shared kitchen.</div>
+              <div><b>Parent move:</b> combine with the ferry to Noord, Eye Filmmuseum exterior, or A'DAM Lookout.</div>
+            </div>
+            <div class="source-links"><a href="https://pllek.nl/">Official site</a><a href="https://amsterdam-mamas.nl/articles/our-favourite-child-friendly-terraces/">Amsterdam Mamas terraces</a></div>
+          </div>
+        </article>
+
+        <article class="card restaurant-card" data-rtags="kids vegetarian brunch highquality">
+          <div class="photo">
+            <span class="rank">Brunch</span>
+            <img alt="Brunch table with pancakes and vegetables" src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80">
+          </div>
+          <div class="card-body">
+            <h3>Dignita Hoftuin</h3>
+            <div class="meta"><span class="pill">Vegetarian options</span><span class="pill blue">Hoftuin</span><span class="pill">Brunch</span><span class="pill yellow">Daytime</span></div>
+            <p class="summary">A pretty daytime brunch option with vegetarian and vegan-marked menu items, useful near the Plantage/ARTIS side of town.</p>
+            <div class="dossier">
+              <div><b>Why it fits:</b> Dignita Hoftuin is open daily for brunch, drinks, and cakes; its menu marks vegetarian and vegan options.</div>
+              <div><b>Vegetarian note:</b> not pure veg, but good labeling makes it easier to order confidently.</div>
+              <div><b>Parent move:</b> pair with ARTIS or Hortus. Better before a big museum/zoo block than after everyone is exhausted.</div>
+            </div>
+            <div class="source-links"><a href="https://dignita.webkey8.nl/locaties/hoftuin/">Location info</a><a href="https://eatwelldogood.nl/wp-content/uploads/2024/07/BRUNCH-MENU-DIGNITA-HOFTUIN-24.pdf">Menu PDF</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section wrap" id="sources">
       <div class="section-title">
         <h2>Sources</h2>
@@ -1159,6 +1640,25 @@
         <li><a href="https://www.visitdenhaag.com/en/scheveningen">Visit The Hague: Scheveningen</a></li>
         <li><a href="https://keukenhof.nl/en/facilities/kids/">Keukenhof: Kids facilities</a></li>
         <li><a href="https://www.iamsterdam.com/en/whats-on/calendar/eating-and-drinking/restaurants/pancakeboat">I amsterdam: Pancake Boat</a></li>
+        <li>Valeri restaurant recommendations from shared WhatsApp screenshots: Madre, PANCAKES Amsterdam, Madam Pancake, Van Holland Stroopwafels, Tony’s Chocolonely Super Store, and Manneken Pis.</li>
+        <li><a href="https://www.madre.amsterdam/">Madre official site</a></li>
+        <li><a href="https://pancakes.amsterdam/contact/faq/">PANCAKES Amsterdam FAQ</a> and <a href="https://pancakes.amsterdam/vegan-menu/">vegan menu</a></li>
+        <li><a href="https://www.madampancake.com/menu/menu">Madam Pancake official menu</a></li>
+        <li><a href="https://tonyschocolonely.com/pages/tonys-super-store">Tony’s Chocolonely Super Store</a></li>
+        <li><a href="https://mannekenpis.nl/en">Manneken Pis official site</a></li>
+        <li><a href="https://www.kailashparbat.nl/">Kailash Parbat Amsterdam</a></li>
+        <li><a href="https://www.goldentemple.nl/">Golden Temple Amsterdam</a></li>
+        <li><a href="https://www.saravanaa-bhavan.nl/">Saravanaa Bhavan Amsterdam</a></li>
+        <li><a href="https://www.spiritrestaurants.nl/en/amsterdam_/menu/buffet/">Spirit Amsterdam buffet</a></li>
+        <li><a href="https://meatlessdistrict.nl/en/">Meatless District Amsterdam</a></li>
+        <li><a href="https://www.theveganindian.nl/">The Vegan Indian Amsterdam</a></li>
+        <li><a href="https://restaurantdekas.com/eng/menu">Restaurant De Kas menu</a></li>
+        <li><a href="https://www.iamsterdam.com/en/see-and-do/eating-and-drinking/vegetarian-restaurants">I amsterdam vegetarian restaurants</a></li>
+        <li><a href="https://www.iamsterdam.com/en/see-and-do/restaurant-and-bars/child-friendly-cafes-and-restaurants">I amsterdam child-friendly restaurants</a></li>
+        <li><a href="https://www.iamsterdam.com/en/see-and-do/restaurant-and-bars/best-cafes-with-outdoor-play-areas">I amsterdam cafes with outdoor play areas</a></li>
+        <li><a href="https://pllek.nl/">Pllek official site</a></li>
+        <li><a href="https://thehappypig.nl/">The Happy Pig Pancake Shop</a></li>
+        <li><a href="https://dignita.webkey8.nl/locaties/hoftuin/">Dignita Hoftuin</a></li>
       </ol>
     </section>
   </main>
@@ -1170,14 +1670,31 @@
   <script>
     const buttons = document.querySelectorAll(".filter-button");
     const cards = document.querySelectorAll(".card");
+    const restaurantButtons = document.querySelectorAll(".restaurant-filter");
+    const restaurantCards = document.querySelectorAll(".restaurant-card");
 
     buttons.forEach((button) => {
+      if (button.classList.contains("restaurant-filter")) return;
       button.addEventListener("click", () => {
-        buttons.forEach((item) => item.classList.remove("active"));
+        buttons.forEach((item) => {
+          if (!item.classList.contains("restaurant-filter")) item.classList.remove("active");
+        });
         button.classList.add("active");
         const filter = button.dataset.filter;
-        cards.forEach((card) => {
+        document.querySelectorAll(".card:not(.restaurant-card)").forEach((card) => {
           const tags = card.dataset.tags.split(" ");
+          card.classList.toggle("hidden", filter !== "all" && !tags.includes(filter));
+        });
+      });
+    });
+
+    restaurantButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        restaurantButtons.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        const filter = button.dataset.rfilter;
+        restaurantCards.forEach((card) => {
+          const tags = card.dataset.rtags.split(" ");
           card.classList.toggle("hidden", filter !== "all" && !tags.includes(filter));
         });
       });
